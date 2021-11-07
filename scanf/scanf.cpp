@@ -1,4 +1,5 @@
 #include "stdio.h"
+#include <math.h>
 
 int main() {
     int vstup, a, b, c;
@@ -15,9 +16,9 @@ int main() {
         scanf("%d", &b);
         printf("zadej treti delku strany: ");
         scanf("%d", &c);
-        printf("vyska: %d\n", ((a + b + c) / 2)/2);
         printf("obvod: %d\n", a + b + c);
-        printf("obsah: %d\n", a * a * a);
+        float s = (2 * (a * b)) / 2;
+        printf("obsah: %d\n", sqrt(s * (s - a) * (s - b) * (s - c)));
     }
     else if (vstup == 2) {
         // resime obdelnik
@@ -28,15 +29,13 @@ int main() {
         if (a == b) {
             printf("je to ctverec\n");
             printf("obvod: %d\n", 2 * (a * b));
-            printf("obsah: %d\n", a * b);
-            }
-            else {
-                // resime kruznici
-                printf("zadej polomer: ");
-                scanf("%d", &a);
-                printf("obvod: %d\n", 2 * 3, 14 * a);
-                printf("obsah: %d\n", 3, 14 * a * a);
-            }
+        }
+        else {
+            // resime kruznici
+            printf("zadej polomer: ");
+            scanf("%d", &a);
+            printf("obvod: %d\n", 2 * 3, 14 * a);
+            printf("obsah: %d\n", 3, 14 * a * a);
         }
     }
-
+}
